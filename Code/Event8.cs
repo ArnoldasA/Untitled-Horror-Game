@@ -17,7 +17,9 @@ public class Event8 : MonoBehaviour
     private Grain _grain;
     public AudioSource source;
    
-
+//chase script, if the gameobject gets closer to the player then the screen begins to darken and grain intensifies
+//when the gameobject is close enough the player postion is reset and the event restarts
+//if player escapes next scene begins
     // Start is called before the first frame update
     void Start()
     {
