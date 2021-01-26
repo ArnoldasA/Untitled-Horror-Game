@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class AudioSystem : MonoBehaviour
 {
+//This audio system is a list of audio clips
+//It utilises the eventmanger to play sounds according to which event is occuring 
+//Volume can and other sound paramters can be easily adjusted by using any one of the audiosources in the scene which are configured for different situations
 
     public List<AudioClip> sfxClips = new List<AudioClip>();
     public List<AudioClip> instrumentalClips = new List<AudioClip>();
@@ -14,6 +17,7 @@ public class AudioSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+    //assigning functions to event manager
         EventManager.current.EventOne += FallBookEvent;
         EventManager.current.EventTwoStart += SceneTransitionVoices;
         EventManager.current.EventTwo += ForSceneTwo;
@@ -21,7 +25,7 @@ public class AudioSystem : MonoBehaviour
         EventManager.current.EventEightStart += Scene8Begins;
         EventManager.current.EventEight += ForSceneEight;
     }
-
+//sounds correlating to events
     public void FallBookEvent()
     {
         audioSources[0].volume = Mathf.Lerp(0, 0.532f, 3f);
